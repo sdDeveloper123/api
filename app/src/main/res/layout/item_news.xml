@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+     <variable
+         name="properties"
+         type="com.reference.newsapi.apis.newsResponse.Article" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="top"
+                android:src="@drawable/ic_launcher_foreground"
+                imageUrl="@{properties.urlToImage}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{properties.title}"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:padding="4dp"
+                    android:textAlignment="textStart"
+                    tools:text = "HELLO"
+                    android:textColor="@color/black" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
